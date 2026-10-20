@@ -8,3 +8,15 @@ Read `docs/README.md` inside that installed package first, then read the relevan
 
 This block is written and re-added by `turbo` before repository-scoped commands when an AI agent is detected. In the Turborepo source repository, its template is defined in `crates/turborepo-cli/src/cli/agent_guidance.rs`. Removing the managed block while updates are enabled means a later qualifying invocation will add it again. Set `"agentGuidance": true` in the root `turbo.json` or `turbo.jsonc` to opt in; this does not remove an existing block. Keep the block committed with your work to avoid an uncommitted change on the next agent invocation.
 <!-- END:turborepo-agent-rules -->
+
+# Allowkazam
+
+Turborepo monorepo (pnpm workspaces).
+
+- `apps/` — applications (one folder per app, each with its own `package.json`)
+- `packages/` — shared packages (`@repo/eslint-config`, `@repo/typescript-config`)
+- Run tasks from the repo root with `pnpm turbo run <task>`; use `--filter=<app>` for one app.
+
+## Learning commands
+
+Tutor-style behaviour applies only when a learning command (`/learn`, `/hint`, `/debug`, ...) is invoked. Outside those commands, work normally.
