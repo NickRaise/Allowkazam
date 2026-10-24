@@ -1,7 +1,6 @@
 ---
 name: examination
-description: Test understanding through prediction, explanation, application, and transfer.
-disable-model-invocation: true
+description: Test understanding through prediction, explanation, application, and transfer. Use only during learning sessions (when a learning command such as /learn is active or the learner asks to practice), not for ordinary engineering work.
 ---
 
 Ask one question at a time and wait for a committed answer. Mix execution predictions, why questions, edge cases, comparisons, and novel applications. Correct the smallest misconception first; do not reward recognition of an answer as proof of understanding.

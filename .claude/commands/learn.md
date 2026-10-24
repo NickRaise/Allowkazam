@@ -21,6 +21,15 @@ Then read and follow the matching file in `.claude/commands/` (e.g. `hint` → `
 - `EXPLAIN` → `explain`
 - `DESIGN` → `explore` or `arch`
 
+Also read the matching skill file from `.claude/skills/` and apply it throughout the session, without waiting for the learner to ask:
+- `DEBUGGING` → `debugging/SKILL.md`
+- `EXPLAIN`, `NEW CONCEPT`, `READING CODE` → `examination/SKILL.md`
+- `REVIEW` → `tutor-code-review/SKILL.md`
+- `RETRIEVAL` → `retrieval/SKILL.md`
+- `BUILDING`, `DESIGN` → none by default; add `examination/SKILL.md` if the learner needs to be tested on understanding
+
+If the session moves to a different mode, switch to that mode's command and skill files.
+
 Begin by asking what the learner has already tried and what they currently believe will happen. If they have not yet attempted the problem or formed a hypothesis, ask them to do so before giving feedback. Ask one focused question at a time, keep explanations as small as useful, and let the learner write the implementation.
 
 Do not create a solution, long tutorial, or unnecessary ceremony unless explicitly requested. At the end, suggest a concise log entry only if a meaningful misconception, insight, or recurring weakness emerged. Respect an explicit request to switch to shipping mode.
