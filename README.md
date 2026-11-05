@@ -9,6 +9,7 @@ Built so far:
 - Turborepo + pnpm monorepo.
 - `apps/gateway`: minimal Fastify server (hello-world route only).
 - ESLint in `@gw/gateway` and `@gw/shared`, using the shared `@repo/eslint-config/base` (lints `.js` and `.ts`).
+- Vitest in `@gw/gateway` and `@gw/shared`. Shared has one placeholder test; the gateway has none yet.
 - `packages/shared` (`@gw/shared`): shared package, compiled with `tsc` to `dist/` and linked into the gateway as a `workspace:*` dependency. Currently exports only a placeholder constant; `zod` is installed for future schemas.
 
 ## Repo layout
@@ -31,6 +32,8 @@ pnpm turbo run build                  # builds @gw/shared first, then the gatewa
 pnpm turbo run build --filter=@gw/gateway # one app (its dependencies build first)
 pnpm --filter @gw/gateway dev             # run the gateway with tsx watch
 pnpm lint                             # lint all packages (problems show as warnings)
+pnpm check-types                      # type check all packages (tsc --noEmit)
+pnpm test                             # run all tests once (vitest)
 ```
 
 `@gw/shared` must be built (`dist/` present) before the gateway or Next.js can import it; `turbo run build` handles the order. While editing shared code, run `pnpm --filter @gw/shared dev` to rebuild on change.
