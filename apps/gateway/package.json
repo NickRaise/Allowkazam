@@ -1,5 +1,5 @@
 {
-  "name": "gateway",
+  "name": "@gw/gateway",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@gw/shared": "workspace:*",
     "fastify": "^5.12.7"
   },
   "devDependencies": {
